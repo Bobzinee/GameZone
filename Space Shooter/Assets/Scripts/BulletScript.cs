@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public GameObject explosionEffect;
     private void Update()
     {
         Destroy(gameObject, 3f);
@@ -14,6 +15,7 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
+            Instantiate(explosionEffect, transform.position, transform.rotation);
         }
 
 
