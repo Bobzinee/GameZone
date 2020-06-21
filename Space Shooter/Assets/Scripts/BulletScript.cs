@@ -14,6 +14,7 @@ public class BulletScript : MonoBehaviour
     private void Update()
     {
         Destroy(gameObject, 3f);
+
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -23,6 +24,9 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
             Destroy(other.gameObject);
             Instantiate(explosionEffect, transform.position, transform.rotation);
+
+            //Incrementing player score.
+            PlayerMovement.playerScore++;
         }
 
 

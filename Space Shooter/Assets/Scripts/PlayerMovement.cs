@@ -12,11 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 offset;
     //Offset distance for enemy to be spawned.
     public GameObject enemy;
+    public static int playerScore;
 
     private void Start()
     {
         InvokeRepeating("SpawnEnemies", 3f, Random.Range(1f, 2f));
-        offset = new Vector3(Random.Range(-14f, 14f), Random.Range(-14f, 14f), 0f);
     }
 
     void Update()
@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        offset = new Vector3(Random.Range(-16f, 16f), Random.Range(-16f, 16f), 0f);
     }
     private void FixedUpdate()
     {
