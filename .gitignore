@@ -9,6 +9,9 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
+*.mp4
+Space Shooter/Assets/Sounds/
+Space Shooter/Assets/bgm.mp3
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta

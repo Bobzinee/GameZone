@@ -7,9 +7,11 @@ public class BulletScript : MonoBehaviour
     public GameObject explosionEffect;
     private Shake shake;
 
+
     private void Start()
     {
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+
     }
     private void Update()
     {
@@ -18,6 +20,9 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
+
+
+
         if (other.gameObject.CompareTag("Enemy"))
         {
             shake.CamShake();
@@ -28,7 +33,7 @@ public class BulletScript : MonoBehaviour
             //Incrementing player score.
             PlayerMovement.playerScore++;
         }
-
-
     }
+
+
 }
