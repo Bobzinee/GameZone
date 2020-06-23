@@ -39,5 +39,9 @@ public class BulletScript : MonoBehaviour
             //Incrementing player score.
             PlayerMovement.playerScore++;
         }
+        if (other.gameObject.CompareTag("Boundary"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
