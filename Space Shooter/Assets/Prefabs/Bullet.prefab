@@ -143,3 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 8749355804011019577, guid: b9f0c2094a89bf94b96768ba2b2e91dc,
     type: 3}
+  smallerExp: {fileID: 6945446204150555367, guid: 2a73b2e334466a448baa0f6d4204dee0,
+    type: 3}

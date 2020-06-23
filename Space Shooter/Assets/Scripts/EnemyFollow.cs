@@ -14,6 +14,10 @@ public class EnemyFollow : MonoBehaviour
     private void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if (gameObject.tag == "SmallerEnemy")
+        {
+            speed = 6f;
+        }
     }
 
 

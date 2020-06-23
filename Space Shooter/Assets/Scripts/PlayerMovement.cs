@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,10 +14,14 @@ public class PlayerMovement : MonoBehaviour
     //Offset distance for enemy to be spawned.
     public GameObject enemy;
     public static int playerScore;
+    public Text highScore;
+
+
 
     private void Start()
     {
-        InvokeRepeating("SpawnEnemies", 3f, Random.Range(1f, 2f));
+        // InvokeRepeating("SpawnEnemies", 3f, Random.Range(2f, 3f));
+        highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     void Update()
@@ -25,6 +30,19 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxis("Vertical");
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         offset = new Vector3(Random.Range(-16f, 16f), Random.Range(-16f, 16f), 0f);
+
+        //Set High Score
+        if (playerScore > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", playerScore);
+            highScore.text = playerScore.ToString();
+        }
+
+
+        if (playerScore == 200)
+        {
+            //Spawn Boss
+        }
     }
     private void FixedUpdate()
     {
@@ -37,8 +55,8 @@ public class PlayerMovement : MonoBehaviour
     private void SpawnEnemies()
     {
         //Spawn enemies
-        Instantiate(enemy, transform.position + offset, Quaternion.identity);
         Instantiate(enemy, transform.position - offset, Quaternion.identity);
+        Instantiate(enemy, transform.position + offset, Quaternion.identity);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
