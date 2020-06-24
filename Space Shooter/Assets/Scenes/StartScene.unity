@@ -1375,6 +1375,9 @@ MonoBehaviour:
   rb: {fileID: 1614690060}
   enemy: {fileID: 5495869107707044492, guid: 3c9d32642f60a6444b4dd852080b56ae, type: 3}
   highScore: {fileID: 796344952}
+  playerExplosionEffect: {fileID: 7058175991332124037, guid: 28f7e69b2de87e543aceb70fe97e7b05,
+    type: 3}
+  spawn: {fileID: 238431746}
 --- !u!114 &1614690062
 MonoBehaviour:
   m_ObjectHideFlags: 0
