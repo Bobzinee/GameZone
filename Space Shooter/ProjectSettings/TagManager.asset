@@ -8,6 +8,8 @@ TagManager:
   - ScreenShake
   - SmallerEnemy
   - Boundary
+  - ExplodingEnemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

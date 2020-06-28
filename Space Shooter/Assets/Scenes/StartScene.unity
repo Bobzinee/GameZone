@@ -442,8 +442,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalEnemy: {fileID: 5495869107707044492, guid: 3c9d32642f60a6444b4dd852080b56ae,
     type: 3}
-  bossEnemy: {fileID: 0}
   smallerEnemy: {fileID: 6277416584445226499, guid: ed321150c16280c4b83d8a312a64c8aa,
+    type: 3}
+  explodingEnemy: {fileID: 414808401695545639, guid: 9c669081a7c7fd84aa4c19bd85be4db8,
     type: 3}
   player: {fileID: 1614690058}
 --- !u!1 &519420028
@@ -1357,7 +1358,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1614690061
 MonoBehaviour:

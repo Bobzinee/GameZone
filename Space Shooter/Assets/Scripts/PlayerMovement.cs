@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "SmallerEnemy")
         {
             spawn.enabled = false;
             Instantiate(playerExplosionEffect, transform.position, transform.rotation);

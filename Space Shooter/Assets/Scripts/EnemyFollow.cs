@@ -5,10 +5,18 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     private Transform target;
-    public float speed = 3f;
+    private float speed = 3f;
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        if (gameObject.CompareTag("SmallerEnemy"))
+        {
+            speed = 6f;
+        }
+        if (gameObject.CompareTag("ExplodingEnemy"))
+        {
+            speed = 1.5f;
+        }
     }
 
     private void Update()
@@ -17,9 +25,6 @@ public class EnemyFollow : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-        if (gameObject.tag == "SmallerEnemy")
-        {
-            speed = 6f;
-        }
+
     }
 }

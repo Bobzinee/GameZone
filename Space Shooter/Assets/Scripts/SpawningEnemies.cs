@@ -5,21 +5,26 @@ using UnityEngine;
 public class SpawningEnemies : MonoBehaviour
 {
     public GameObject normalEnemy;
-    public GameObject bossEnemy;
+    // public GameObject bossEnemy;
     public GameObject smallerEnemy;
+    public GameObject explodingEnemy;
     private Vector3 offset;
     public Transform player;
     private Vector3 distance;
     private float spawnTimeNormal;
+    private float spawnTimeExplode;
     private float spawnTimeSmall;
     // public PlayerMovement score;
+
 
     private void Start()
     {
         spawnTimeNormal = Random.Range(1f, 2f);
         spawnTimeSmall = Random.Range(3f, 6f);
+        spawnTimeExplode = Random.Range(6f, 8f);
         InvokeRepeating("SpawnNormalEnemy", 2f, spawnTimeNormal);
-        InvokeRepeating("SpawnSmallerEnemy", 5f, spawnTimeSmall);
+        InvokeRepeating("SpawnSmallerEnemy", 4f, spawnTimeSmall);
+        InvokeRepeating("SpawnExplodingEnemy", 6f, spawnTimeExplode);
     }
     private void Update()
     {
@@ -30,17 +35,24 @@ public class SpawningEnemies : MonoBehaviour
         {
             spawnTimeNormal = 1.2f;
             spawnTimeSmall = 3f;
+            spawnTimeExplode = 6f;
         }
         if (PlayerMovement.playerScore > 140)
         {
             spawnTimeNormal = 0.8f;
             spawnTimeSmall = 2f;
+            spawnTimeExplode = 5f;
         }
     }
 
     private void SpawnNormalEnemy()
     {
         Instantiate(normalEnemy, distance, transform.rotation);
+    }
+
+    private void SpawnExplodingEnemy()
+    {
+        Instantiate(explodingEnemy, distance, transform.rotation);
     }
 
     public void SpawnBoss()
